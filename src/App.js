@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+// import { Provider } from "react-redux";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './views/Home';
+import Quiz from './views/Quez';
+import Result from './views/Result';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Provider> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/quiz" element={<Quiz/>} />
+          <Route path="/result" element={<Result/>} />
+        </Routes>
+      </BrowserRouter>
+      {/* </Provider> */}
     </div>
   );
 }
